@@ -6,8 +6,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 
-from . import general
-
 
 def fitness(x):
     # Model fitness as a weighted combination of metrics
@@ -108,6 +106,9 @@ def compute_ap(recall, precision, v5_metric=False):
         ap = np.sum((mrec[i + 1] - mrec[i]) * mpre[i + 1])  # area under curve
 
     return ap, mpre, mrec
+
+
+from . import general
 
 
 class ConfusionMatrix:
